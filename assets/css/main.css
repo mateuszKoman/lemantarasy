@@ -3215,5 +3215,14 @@ body.is-touch .poptrox-popup .closer {
         margin-left: 0;
         padding-left: 0;
     }
+    .poptrox-popup .nav-next,
+    .poptrox-popup .nav-previous,
+    .poptrox-popup .closer {
+        font-size: 10px;
+    }
+
+    .poptrox-popup .closer {
+        height: 2em;
+    }
 
 }
