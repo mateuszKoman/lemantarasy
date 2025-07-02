@@ -3216,13 +3216,12 @@ body.is-touch .poptrox-popup .closer {
         padding-left: 0;
     }
     .poptrox-popup .nav-next,
-    .poptrox-popup .nav-previous,
-    .poptrox-popup .closer {
+    .poptrox-popup .nav-previous {
         font-size: 10px;
     }
 
     .poptrox-popup .closer {
-        height: 2em;
+        display: none;
     }
 
 }
