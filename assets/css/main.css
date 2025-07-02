@@ -281,6 +281,10 @@ pre code {
     width: 100%;
 }
 
+.poptrox-popup .closer {
+    display: none !important;
+}
+
 @media screen and (max-width: 980px) {
 
     .container {
@@ -2081,7 +2085,7 @@ input[type="radio"] + label:before {
     border-radius: 0.35em;
     border: solid 3px rgba(255, 255, 255, 0.5);
     color: #fff;
-    content: 'Podgląd';
+    content: 'Pokaż więcej';
     display: inline-block;
     font-size: 0.8em;
     font-weight: 400;
@@ -3219,9 +3223,4 @@ body.is-touch .poptrox-popup .closer {
     .poptrox-popup .nav-previous {
         font-size: 10px;
     }
-
-    .poptrox-popup .closer {
-        display: none;
-    }
-
 }
