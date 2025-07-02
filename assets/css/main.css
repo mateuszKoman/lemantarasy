@@ -2223,12 +2223,12 @@ ul.icons li .icon:before {
 
 ul.labeled-icons {
     list-style: none;
-    padding: 0;
+    padding: 1em 0 0;
 }
 
 ul.labeled-icons li {
     line-height: 1.75em;
-    margin: 1.5em 0 0 0;
+    margin: 0.5em 0 0 0;
     padding-left: 2.25em;
     position: relative;
 }
@@ -2702,8 +2702,8 @@ input[type="button"]:disabled,
 
 #main > section {
     border-top: solid 2px #efefef;
-    margin: 4em 0 0 0;
-    padding: 4em 0 0 0;
+    margin: 2em 0 0 0;
+    padding: 2em 0 0 0;
 }
 
 #main > section:first-child {
