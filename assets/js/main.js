@@ -96,8 +96,7 @@
     // Main Sections: Two.
 
     // Lightbox gallery.
-    $window.on('load', function () {
-
+    $(document).ready(function () {
         $('#five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve').poptrox({
             caption: function ($a) {
                 return $a.next('h3').text();
@@ -111,9 +110,8 @@
             usePopupDefaultStyling: false,
             usePopupEasyClose: false,
             usePopupNav: true,
-            windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+            windowMargin: (typeof breakpoints !== 'undefined' && breakpoints.active('<=small') ? 0 : 50)
         });
-
     });
 
 })(jQuery);
