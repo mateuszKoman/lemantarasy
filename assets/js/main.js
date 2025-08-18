@@ -97,7 +97,7 @@
 
     // Lightbox gallery.
     $(document).ready(function () {
-        $('#five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve').poptrox({
+        $('#five, #six, #seven, #eight, #nine, #ten, #eleven, #twelve, #thirteen, #fourteen').poptrox({
             caption: function ($a) {
                 return $a.next('h3').text();
             },
