@@ -19,6 +19,7 @@ import { CONTENT } from '../content';
 })
 export class Lightbox {
   readonly photos = input.required<readonly string[]>();
+  readonly description = input.required<string>();
   readonly index = model.required<number>();
   readonly closed = output<void>();
 

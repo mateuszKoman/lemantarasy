@@ -6,7 +6,11 @@
   (keydown)="onKeydown($event)"
 >
   <figure class="lightbox__stage" (click)="onBackdropClick($event)">
-    <img class="lightbox__photo" [src]="currentPhoto()" [alt]="text.photoAlt(index() + 1)" />
+    <img
+      class="lightbox__photo"
+      [src]="currentPhoto()"
+      [alt]="text.photoAlt(description(), index() + 1, photos().length)"
+    />
   </figure>
 
   @if (hasMultiplePhotos()) {
