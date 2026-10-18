@@ -1,0 +1,109 @@
+.lightbox {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  // Follows the mobile browser's toolbars, so the controls are never hidden behind them.
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgb(14 14 14 / 0.95);
+  color: var(--color-text);
+  overscroll-behavior: contain;
+  animation: fade-in 0.3s var(--ease);
+
+  &::backdrop {
+    background: transparent;
+  }
+}
+
+.lightbox__stage {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  margin: 0;
+  padding: clamp(3.5rem, 6vw, 4.5rem) clamp(0.5rem, 7vw, 6rem);
+}
+
+.lightbox__photo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.5);
+}
+
+.lightbox__counter {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.lightbox__button {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: rgb(34 34 34 / 0.8);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--color-accent);
+      background: var(--color-surface-raised);
+    }
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.lightbox__close {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.lightbox__prev,
+.lightbox__next {
+  top: 50%;
+  translate: 0 -50%;
+
+  @media (max-width: 600px) {
+    top: auto;
+    bottom: 1rem;
+    translate: none;
+  }
+}
+
+.lightbox__prev {
+  left: 1rem;
+}
+
+.lightbox__next {
+  right: 1rem;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}

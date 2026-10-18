@@ -1,0 +1,46 @@
+<dialog
+  #dialog
+  class="lightbox"
+  [attr.aria-label]="text.label"
+  (close)="closed.emit()"
+  (keydown)="onKeydown($event)"
+>
+  <figure class="lightbox__stage" (click)="onBackdropClick($event)">
+    <img
+      class="lightbox__photo"
+      [src]="currentPhoto()"
+      [alt]="text.photoAlt(description(), index() + 1, photos().length)"
+    />
+  </figure>
+
+  @if (hasMultiplePhotos()) {
+    <span class="lightbox__counter">{{ index() + 1 }} / {{ photos().length }}</span>
+
+    <button
+      type="button"
+      class="lightbox__button lightbox__prev"
+      [attr.aria-label]="text.previous"
+      (click)="show(-1)"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+    </button>
+    <button
+      type="button"
+      class="lightbox__button lightbox__next"
+      [attr.aria-label]="text.next"
+      (click)="show(1)"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+    </button>
+  }
+
+  <button
+    type="button"
+    class="lightbox__button lightbox__close"
+    autofocus
+    [attr.aria-label]="text.close"
+    (click)="close()"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+  </button>
+</dialog>
