@@ -1,0 +1,30 @@
+<section class="section container">
+  <span class="eyebrow">{{ text.eyebrow }}</span>
+  <h2 class="section-title">{{ text.title }}</h2>
+
+  <ul class="gallery">
+    @for (project of projects; track project.id; let i = $index) {
+      <li>
+        <!-- A real link, so the photo still opens if JavaScript is unavailable. -->
+        <a
+          class="card"
+          [href]="project.photos[0]"
+          [attr.aria-label]="text.openProjectLabel(i + 1, project.photos.length)"
+          (click)="open(project, $event)"
+        >
+          <img
+            [ngSrc]="project.thumbnail"
+            fill
+            sizes="(min-width: 700px) 50vw, 100vw"
+            [alt]="text.projectAlt(i + 1)"
+          />
+          <span class="card__badge">{{ text.photoCount(project.photos.length) }}</span>
+        </a>
+      </li>
+    }
+  </ul>
+</section>
+
+@if (openProject(); as project) {
+  <app-lightbox [photos]="project.photos" [(index)]="photoIndex" (closed)="openProject.set(null)" />
+}

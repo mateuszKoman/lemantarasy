@@ -1,0 +1,24 @@
+<header class="hero container">
+  <div class="hero__content">
+    <img
+      class="hero__logo"
+      ngSrc="images/logo.png"
+      width="784"
+      height="790"
+      [alt]="text.logoAlt"
+      priority
+    />
+    <h1 class="hero__title">{{ text.title }}</h1>
+    <p class="hero__lead">{{ text.lead }}</p>
+  </div>
+
+  <div class="hero__media">
+    <img
+      ngSrc="images/fulls/06i.jpg"
+      fill
+      sizes="(min-width: 900px) 55vw, 100vw"
+      [alt]="text.photoAlt"
+      priority
+    />
+  </div>
+</header>
